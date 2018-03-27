@@ -109,8 +109,8 @@ public class NavigateTabBar extends LinearLayout implements View.OnClickListener
         holder.tag = tabParam.title;
         holder.pageParam = tabParam;
 
-        holder.tabIcon = (ImageView) view.findViewById(R.id.tab_icon);
-        holder.tabTitle = ((TextView) view.findViewById(R.id.tab_title));
+        holder.tabIcon = view.findViewById(R.id.tab_icon);
+        holder.tabTitle = view.findViewById(R.id.tab_title);
 
         if (TextUtils.isEmpty(tabParam.title)) {
             holder.tabTitle.setVisibility(View.INVISIBLE);

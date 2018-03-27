@@ -4,10 +4,15 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.widget.Toast
-import com.shouxiu.bear.fragment.HomeFragment
+import com.shouxiu.bear.fragment.*
 import com.shouxiu.bear.view.NavigateTabBar
 import kotlinx.android.synthetic.main.activity_main.*
 
+/**
+ * @author     yeping
+ * @date   2018/3/27 15:34
+ * 主界面-设置fragment
+ */
 class MainActivity : AppCompatActivity() {
 
     private val TAG_PAGE_HOME = "首页"
@@ -25,10 +30,10 @@ class MainActivity : AppCompatActivity() {
 
         mainTabBar.onRestoreInstanceState(savedInstanceState)
         mainTabBar.addTab(HomeFragment::class.java, NavigateTabBar.TabParam(R.drawable.home_pressed, R.drawable.home_selected, TAG_PAGE_HOME))
-        mainTabBar.addTab(HomeFragment::class.java, NavigateTabBar.TabParam(R.drawable.live_pressed, R.drawable.live_selected, TAG_PAGE_LIVE))
-        mainTabBar.addTab(HomeFragment::class.java, NavigateTabBar.TabParam(R.drawable.video_pressed, R.drawable.video_selected, TAG_PAGE_VIDEO))
-        mainTabBar.addTab(HomeFragment::class.java, NavigateTabBar.TabParam(R.drawable.follow_pressed, R.drawable.follow_selected, TAG_PAGE_FOLLOW))
-        mainTabBar.addTab(HomeFragment::class.java, NavigateTabBar.TabParam(R.drawable.user_pressed, R.drawable.user_selected, TAG_PAGE_USER))
+        mainTabBar.addTab(LiveFragment::class.java, NavigateTabBar.TabParam(R.drawable.live_pressed, R.drawable.live_selected, TAG_PAGE_LIVE))
+        mainTabBar.addTab(VideoFragment::class.java, NavigateTabBar.TabParam(R.drawable.video_pressed, R.drawable.video_selected, TAG_PAGE_VIDEO))
+        mainTabBar.addTab(FollowFragment::class.java, NavigateTabBar.TabParam(R.drawable.follow_pressed, R.drawable.follow_selected, TAG_PAGE_FOLLOW))
+        mainTabBar.addTab(UserFragment::class.java, NavigateTabBar.TabParam(R.drawable.user_pressed, R.drawable.user_selected, TAG_PAGE_USER))
         mainTabBar.setTabSelectListener { holder ->
             when (holder.tag.toString()) {
                 TAG_PAGE_HOME -> mainTabBar.showFragment(holder)

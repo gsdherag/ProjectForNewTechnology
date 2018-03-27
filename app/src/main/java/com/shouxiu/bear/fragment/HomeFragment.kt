@@ -1,23 +1,23 @@
 package com.shouxiu.bear.fragment
 
-import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import com.shouxiu.bear.R
+import com.shouxiu.bear.base.BaseFragment
 
 /**
  * @author     yeping
  * @date   2018/3/27 15:34
- * TODO
+ * 首页fragment
  */
-class HomeFragment : Fragment() {
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-
-        val view = inflater.inflate(R.layout.fragment_home_one, container, false)
-        return view
+class HomeFragment : BaseFragment() {
+    override fun getLayoutId(): Int {
+        return R.layout.fragment_home_one
     }
 
+    override fun init() {
+//        viewpager.offscreenPageLimit =
+    }
 
+    override fun lazyFetchData() {
+
+    }
 }
